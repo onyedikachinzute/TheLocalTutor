@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thelocaltutor"
+version = "1.0.0"
+description = "Offline AI-powered desktop study assistant"
+requires-python = ">=3.11"
+dependencies = [
+    "PySide6>=6.7",
+    "pymupdf>=1.24",
+    "python-pptx>=1.0",
+    "requests>=2.32",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-qt>=4.4",
+]
+
+[project.scripts]
+thelocaltutor = "thelocaltutor.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
